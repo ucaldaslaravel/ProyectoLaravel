@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Producto;
+use App\Productos;
 
 class ProductosController extends Controller
 {
@@ -14,8 +14,10 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        return view('Productos.index', [
-            'Productos' => Producto::latest()->paginate(),
+   
+
+        return view('Productos.index',[
+            'productos' => Productos::get(),
         ]);
     }
 

@@ -10,13 +10,12 @@
    <ul>
         @isset ($productos)
         @forelse($productos as $producto)
-          <li>
+          <li>{{ $producto->nombre }}
               </li>
       @empty
           <li>No hay productos para mostrar</li>
       @endforelse
 
-        {{ $productos->links() }}
     @else
         <li>Catálogo no definido</li>
     @endisset

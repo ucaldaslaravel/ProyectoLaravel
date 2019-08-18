@@ -14,5 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('catalogo', 'ProductosController@index')->name('Productos.index');
+Route::resource('catalogo', 'ProductosController');
 

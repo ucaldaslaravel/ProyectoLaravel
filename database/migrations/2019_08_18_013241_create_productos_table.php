@@ -24,8 +24,8 @@ class CreateProductosTable extends Migration
             $table->integer('id_presentacion_producto');
             $table->integer('id_categoria_producto');
            
-            $table->foreign('id_presentacion_producto')->references('id_presentacion_producto')->on('presentaciones_productos');
-            $table->foreign('id_categoria_producto')->references('id_categoria_producto')->on('categorias_productos');
+            $table->foreign('id_presentacion_producto')->references('id_presentacion_producto')->on('presentaciones_productos')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_categoria_producto')->references('id_categoria_producto')->on('categorias_productos')->onDelete('cascade')->onUpdate('cascade');
 
 
             $table->timestamps();

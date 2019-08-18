@@ -19,7 +19,7 @@ class CreatePersonalTable extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('perfil');
-            $table->string('contraseña');
+            $table->string('contrasena');
 
             $table->primary('id_persona');
            

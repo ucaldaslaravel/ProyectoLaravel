@@ -9,16 +9,33 @@
 
    <ul>
         @isset ($productos)
-        @forelse($productos as $producto)
-          <li>{{ $producto->nombre }}
-              </li>
-      @empty
-          <li>No hay productos para mostrar</li>
-      @endforelse
+        <div class="card-group">
+        @for ($i = 0; $i < count($productos); $i++)
+       
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ $productos[$i]->nombre }}</h5>
+            <p class="card-text">{{ $productos[$i]->precio }}</p>
+            <a href="#" class="card-link">ver</a>
+          </div>
+        </div>
+        @if($i%4===0)
+      </div>
+      <div class="card-group">
 
+        @endif
+        @if($i===count($productos))
+      </div>
+
+        @endif
+        
+        @endfor
+        
+     
     @else
         <li>Catálogo no definido</li>
     @endisset
         
    </ul>
 @endsection
+

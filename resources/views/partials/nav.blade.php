@@ -3,8 +3,7 @@
       Menu
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      <a class="dropdown-item btn btn-primary" type="button" href="{{ route('clientes.index') }}" >Clientes</a>
-      <a class="dropdown-item btn btn-primary"  >Clientes</a>
+      <a class="dropdown-item btn btn-primary"  href="{{ route('clientes.index') }}" >Clientes</a>
 
       <a class="dropdown-item btn btn-primary" >Proveedores</a>
       <a class="dropdown-item btn btn-primary"  >Personal</a>

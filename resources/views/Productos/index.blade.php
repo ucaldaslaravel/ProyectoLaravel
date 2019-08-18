@@ -5,7 +5,6 @@
 
 @section('contenido')
   <h1>Catálogo de productos</h1>
-   <br></br>
 
    <ul>
         @isset ($productos)

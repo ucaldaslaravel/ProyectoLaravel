@@ -22,7 +22,7 @@
         @endif
        
         <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" >
+          <img src= "/img_productos/{{ $productos[$i]->imagen }}"height="300" class="card-img-top" >
           <div class="card-body">
             <h5 class="card-title">{{ $productos[$i]->nombre }}</h5>
             <p class="card-text">{{ $productos[$i]->precio }}</p>

@@ -591,84 +591,84 @@ INSERT INTO presentaciones_productos(descripcion) VALUES ('Caja') ON CONFLICT DO
 
 -------------------------------------	
 
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Leche Colanta', 2000, 19, 3, 20, 1, 1) 
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Leche Colanta','lechecolanta.jpg', 2000, 19, 3, 20, 1, 1) 
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Lecha entera Celema', 1900, 150, 2, 15, 1, 1)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Lecha entera Celema','lechecelema.jpg', 1900, 150, 2, 15, 1, 1)
 	 ON CONFLICT DO NOTHING;
 
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Mandarinas', 3000, 90, 3, 10, 2, 3)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Mandarinas','mandarina.jpg', 3000, 90, 3, 10, 2, 3)
 	 ON CONFLICT DO NOTHING;
 
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Lentejas', 1000, 15, 5, 30, 3, 5)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Lentejas','lentejas.jpg', 1000, 15, 5, 30, 3, 5)
 	ON CONFLICT DO NOTHING;
 	
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Arroz Doña Pepa', 1200, 80, 5, 25, 3, 5)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Arroz Doña Pepa','arrozpepa.png', 1200, 80, 5, 25, 3, 5)
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Maíz trillado', 900, 69, 3, 10, 4, 5)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Maíz trillado','maiztrillado.jpg', 900, 69, 3, 10, 4, 5)
 	ON CONFLICT DO NOTHING;
 	
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Lechuga', 1500, 79, 3, 10, 3, 4)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Lechuga','lechuga.png', 1500, 79, 3, 10, 3, 4)
 	ON CONFLICT DO NOTHING;
 	
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Kiwi', 2000, 39, 2, 9, 12, 3)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Kiwi','kiwi.png', 2000, 39, 2, 9, 12, 3)
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Maracuya', 3000, 180, 3, 10, 12, 3)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Maracuya','maracuya.jpg', 3000, 180, 3, 10, 12, 3)
 	ON CONFLICT DO NOTHING;
 								  
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Cereal Madagascar', 3000, 90, 3, 10, 3, 5)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Cereal Madagascar','dreamworks-package-madagascar.png', 3000, 90, 3, 10, 3, 5)
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Cafe Monumental', 4500, 29, 5, 10, 3, 4)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Cafe Monumental','cafe.jpg', 4500, 29, 5, 10, 3, 4)
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Mantequilla Colanta', 3800, 55, 3, 10, 9, 4)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Mantequilla Colanta','mantequilla-sin-sal250-1.png', 3800, 55, 3, 10, 9, 4)
 	ON CONFLICT DO NOTHING;
 	
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Jabon Ariel', 7800, 210, 3, 15, 4, 7)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Jabon Ariel','jabonariel.png', 7800, 210, 3, 15, 4, 7)
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Manzanas', 4500, 39, 3, 15, 12, 3)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Manzanas','manzanas.png', 4500, 39, 3, 15, 12, 3)
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Arroz Diana', 1500, 70, 10, 30, 3, 5)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Arroz Diana','arrozdiana.jpg', 1500, 70, 10, 30, 3, 5)
 	ON CONFLICT DO NOTHING;
 	
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Frijol del Costal', 1500, 29, 5, 20, 3, 5)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Frijol del Costal','frijolcostal.png', 1500, 29, 5, 20, 3, 5)
 	ON CONFLICT DO NOTHING;
 	
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Mantequilla don Oleo', 3500, 50, 10, 20, 9, 4)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Mantequilla don Oleo','mantequillaoleo.jpg', 3500, 50, 10, 20, 9, 4)
 	ON CONFLICT DO NOTHING;
 	
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Crema de leche Colanta', 2200, 19, 10, 40, 3, 1)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Crema de leche Colanta','cremalechecol.png', 2200, 19, 10, 40, 3, 1)
 	ON CONFLICT DO NOTHING;
 	
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Jabon en polvo Josefina', 4000, 30, 5, 20, 4, 7)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Jabon en polvo Josefina','javonpolvo.jpg', 4000, 30, 5, 20, 4, 7)
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO productos(nombre, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
-	VALUES('Crema dental Colgate', 1800, 19, 10, 20, 9, 6)
+INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minima, cantidad_maxima, id_presentacion_producto, id_categoria_producto)
+	VALUES('Crema dental Colgate','colgate.jpg', 1800, 19, 10, 20, 9, 6)
 	ON CONFLICT DO NOTHING;
 	
 -------------------------------------	

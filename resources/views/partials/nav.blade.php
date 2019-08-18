@@ -5,10 +5,10 @@
     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
       <a class="dropdown-item btn btn-primary"  href="{{ route('clientes.index') }}" >Clientes</a>
       
-      <a class="dropdown-item btn btn-primary"  href="{{ route('catalogo.index',1) }}">Proveedores</a>
+      <a class="dropdown-item btn btn-primary"  href="{{ route('proveedores.index') }}">Proveedores</a>
       <a class="dropdown-item btn btn-primary"  >Personal</a>
       <a class="dropdown-item btn btn-primary"  >Catalogo Producto</a>
-      <a class="dropdown-item btn btn-primary" >Presentaciones Producto</a>
+      <a class="dropdown-item btn btn-primary" href="{{ route('presentacionesproductos.index') }}" >Presentaciones Producto</a>
       <a class="dropdown-item btn btn-primary"  href="{{ route('productos.index') }}" >Productos</a>
       <a class="dropdown-item btn btn-primary" >Pagos clientes</a>
       <a class="dropdown-item btn btn-primary" >Pagos proveedores</a>

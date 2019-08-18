@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Proveedores;
 class ProveedoresController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class ProveedoresController extends Controller
      */
     public function index()
     {
-        //
+        return view('Proveedores.index',[
+            'proveedores' => Proveedores::get(),
+        ]);
     }
 
     /**
@@ -45,7 +47,9 @@ class ProveedoresController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Proveedores.show', [
+            'proveedores' => $proveedores
+        ]);
     }
 
     /**

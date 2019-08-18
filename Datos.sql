@@ -1350,3 +1350,46 @@ SELECT * FROM insertar_pago_cliente('CL016', 2000, '2019-04-11');
 SELECT * FROM insertar_pago_cliente('CL016', 2000, '2019-04-11');
 SELECT * FROM insertar_pago_cliente('CL016', 4000, '2019-04-11');
 SELECT * FROM insertar_pago_cliente('CL016', 500, '2019-04-10');
+
+update migrations set batch=1
+where migration  LIKE '%categorias_productos%'
+or migration  LIKE'%presentaciones_productos%'
+or migration  LIKE'%personal%'
+or migration  LIKE'%clientes%'
+or migration  LIKE'%proveedores%';
+
+update migrations set batch=2
+where migration  LIKE '%bajas_productos%'
+or migration  LIKE'%pagos_clientes%'
+or migration  LIKE'%pagos_proveedores%'
+or migration  LIKE'%productos%';
+
+update migrations set batch=3
+where migration  LIKE '%ventas%'
+or migration  LIKE'%compras%';
+
+update migrations set batch=4
+where migration  LIKE '%devoluciones_ventas%'
+or migration  LIKE'%devoluciones_compras%'
+or migration  LIKE'%detalles_devoluciones_ventas%'
+or migration  LIKE'%detalles_devoluciones_compras%'
+or migration  LIKE'%detalles_compras%'
+or migration  LIKE'%detalles_ventas%';
+
+DROP TABLE IF EXISTS categorias_productos CASCADE;
+DROP TABLE IF EXISTS presentaciones_productos CASCADE;
+DROP TABLE IF EXISTS productos CASCADE;
+DROP TABLE IF EXISTS bajas_productos;
+DROP TABLE IF EXISTS clientes CASCADE;
+DROP TABLE IF EXISTS pagos_clientes;
+DROP TABLE IF EXISTS personal CASCADE;
+DROP TABLE IF EXISTS proveedores CASCADE;
+DROP TABLE IF EXISTS pagos_proveedores;
+DROP TABLE IF EXISTS ventas CASCADE;
+DROP TABLE IF EXISTS detalles_ventas;
+DROP TABLE IF EXISTS devoluciones_ventas CASCADE;
+DROP TABLE IF EXISTS detalles_devoluciones_ventas;
+DROP TABLE IF EXISTS compras CASCADE;
+DROP TABLE IF EXISTS detalles_compras;
+DROP TABLE IF EXISTS devoluciones_compras CASCADE;
+DROP TABLE IF EXISTS detalles_devoluciones_compras;

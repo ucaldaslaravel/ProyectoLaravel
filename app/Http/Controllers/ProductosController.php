@@ -21,6 +21,15 @@ class ProductosController extends Controller
         ]);
     }
 
+    public function index2(Catalogo $producto)
+    {
+   
+
+        return view('Productos.index',[
+            'productos' => Productos::where('id_categoria_producto', $producto),
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

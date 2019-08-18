@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('catalogo', 'ProductosController@index')->name('productos.index');
+Route::get('Productos', 'ProductosController@index')->name('productos.index');
+Route::get('Catalogos,{catalogo}', 'ProductosController@index2')->name('catalogo.index');
+
 Route::get('clientes', 'ClientesController@index')->name('clientes.index');
 

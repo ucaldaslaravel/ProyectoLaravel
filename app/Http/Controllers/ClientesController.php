@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Clientes;
 class ClientesController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        //
+        return view('Clientes.index',[
+            'clientes' => Clientes::get(),
+        ]);
     }
 
     /**
@@ -34,7 +36,7 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -43,9 +45,11 @@ class ClientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(cliente $cliente)
     {
-        //
+        return view('Clientes.show', [
+            'cliente' => $cliente
+        ]);
     }
 
     /**

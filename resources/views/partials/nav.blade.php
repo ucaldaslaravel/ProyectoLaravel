@@ -3,22 +3,26 @@
       Menu
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      <button class="dropdown-item" type="button">Clientes</button>
-      <button class="dropdown-item" type="button">Proveedores</button>
-      <button class="dropdown-item" type="button">Personal</button>
-      <button class="dropdown-item" type="button">Catalogo Producto</button>
-      <button class="dropdown-item" type="button">Presentaciones Producto</button>
-      <button class="dropdown-item" type="button">Productos</button>
-      <button class="dropdown-item" type="button">Pagos clientes</button>
-      <button class="dropdown-item" type="button">Pagos proveedores</button>
-      <button class="dropdown-item" type="button">Ventas</button>
-      <button class="dropdown-item" type="button">Bajas ventas</button>
-      <button class="dropdown-item" type="button">Detalles ventas</button>
-      <button class="dropdown-item" type="button">Devoluciones ventas</button>
-      <button class="dropdown-item" type="button">Detalles devoluciones ventas</button>
-      <button class="dropdown-item" type="button">Compras</button>
-      <button class="dropdown-item" type="button">Detalles compras</button>
-      <button class="dropdown-item" type="button">Devoluciones compras</button>
-      <button class="dropdown-item" type="button">Detalles devoluciones compras</button>
+      <a class="dropdown-item btn btn-primary" type="button" >Clientes</a>
+      <a class="dropdown-item btn btn-primary" >Proveedores</a>
+      <a class="dropdown-item btn btn-primary" type="button" >Personal</a>
+      <a class="dropdown-item btn btn-primary" type="button" >Catalogo Producto</a>
+      <a class="dropdown-item btn btn-primary" type="button">Presentaciones Producto</a>
+      <a class="dropdown-item btn btn-primary"  href="{{ route('productos.index') }}" >Productos</a>
+      <a class="dropdown-item btn btn-primary" type="button">Pagos clientes</a>
+      <a class="dropdown-item btn btn-primary" type="button">Pagos proveedores</a>
+      <a class="dropdown-item btn btn-primary" type="button">Ventas</a>
+      <a class="dropdown-item btn btn-primary" type="button" >Bajas ventas</a>
+      <a class="dropdown-item btn btn-primary" type="button" >Detalles ventas</a>
+      <a class="dropdown-item btn btn-primary" type="button" >Devoluciones ventas</a>
+      <a class="dropdown-item btn btn-primary" type="button" >Detalles devoluciones ventas</a>
+      <a class="dropdown-item btn btn-primary" type="button" >Compras</a>
+      <a class="dropdown-item btn btn-primary" type="button" >Detalles compras</a>
+      <a class="dropdown-item btn btn-primary" type="button" >Devoluciones compras</a>
+      <a class="dropdown-item btn btn-primary" type="button" >Detalles devoluciones compras</a>
     </div>
+
+     
   </div>
+
+  

@@ -15,7 +15,7 @@ class CreatePresentacionesProductosTable extends Migration
     {
         Schema::create('presentaciones_productos', function (Blueprint $table) {
             $table->bigIncrements('id_presentacion_producto');
-            $table->string('descripcion')->nullable();
+            $table->string('descripcion');
 
 
             $table->timestamps();

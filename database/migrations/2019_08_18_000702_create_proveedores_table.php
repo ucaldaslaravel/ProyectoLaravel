@@ -17,7 +17,7 @@ class CreateProveedoresTable extends Migration
             $table->string('id_proveedor');
             $table->string('nombre');
             $table->string('telefono');
-            $table->string('correo')->nullable();
+            $table->string('correo');
           
             $table->timestamps();
 

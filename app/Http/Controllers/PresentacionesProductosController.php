@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\PresentacionesProductos;
 class PresentacionesProductosController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class PresentacionesProductosController extends Controller
      */
     public function index()
     {
-        //
+        return view('PresentacionesProductos.index',[
+            'presentacionesproductos' => PresentacionesProductos::get(),
+        ]);
     }
 
     /**
@@ -43,9 +45,11 @@ class PresentacionesProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(presentacionesproductos $presentacionesproductos)
     {
-        //
+        return view('PresentacionesProductos.show', [
+            'presentacionesproductos' => $presentacionesproductos
+        ]);
     }
 
     /**

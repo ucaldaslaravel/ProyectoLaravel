@@ -11,6 +11,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Nombre</th>
                 <th>Telefono</th>
                 <th>Dirección</th>
@@ -28,6 +29,7 @@
                     <td>{{ $cliente->telefonos}}</td>
                 
                     <td>{{ $cliente->direccion}}</td>
+                    <td>{{ $cliente->con_credito}}</td>
                     <td> 
                        {{-- --{} <div class="btn-group" role="group">
                             <div class="col-md-6 custom">

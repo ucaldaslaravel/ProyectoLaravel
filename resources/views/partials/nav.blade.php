@@ -1,8 +1,9 @@
-<div class="dropdown">
+<div  class="navbar navbar-light" >
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Menu
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <div class="dropdown-menu" class="collapse" class="nav" aria-labelledby="dropdownMenu2">
+
         <a class="dropdown-item btn btn-primary"  >Catalogo Producto</a>
 
         @if (Auth()->check())
@@ -28,7 +29,6 @@
       <a class="dropdown-item btn btn-primary"  >Devoluciones compras</a>
       <a class="dropdown-item btn btn-primary"  >Detalles devoluciones compras</a>
       @endif
-      <a class="dropdown-item btn btn-primary" href="{{ route('logout')}}" >Cerrar sesion de {{ auth()->user()->nombre }} </a>
 
 
       @endif
@@ -37,8 +37,8 @@
 
 <!-- sólo si es un usuario invitado -->
 @if (auth()->guest())
-     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+     
+<button type="button"  class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
     Autenticarse
   </button>
   
@@ -73,6 +73,12 @@
   </div>
 
 @endif
+@if (Auth()->check())
+<form action="{{ route('logout')}}">
+  <input type="submit" class="btn btn-outline-danger " value="Cerrar sesion de {{ auth()->user()->nombre }}" />
+</form>
+
+  @endif
 
      
   </div>

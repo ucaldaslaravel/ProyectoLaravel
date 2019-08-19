@@ -12,12 +12,9 @@
         @if (auth()->user()->perfil=='Administrador')
 
       <a class="dropdown-item btn btn-primary"  href="{{ route('clientes.index') }}" >Clientes</a>
-<<<<<<< HEAD
-      <a class="dropdown-item btn btn-primary"  >Proveedores</a>
-=======
+
       
       <a class="dropdown-item btn btn-primary"  href="{{ route('proveedores.index') }}">Proveedores</a>
->>>>>>> 06312455bd1a34aea3f0f73a50bb3e498559ff2c
       <a class="dropdown-item btn btn-primary"  >Personal</a>
       <a class="dropdown-item btn btn-primary"  >Catalogo Producto</a>
       <a class="dropdown-item btn btn-primary" href="{{ route('presentacionesproductos.index') }}" >Presentaciones Producto</a>

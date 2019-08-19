@@ -3,6 +3,8 @@
 @section('titulo', 'Clientes')
 
 @section('contenido')
+
+    
     <br>
 	<h3>Clientes</h3>
     {{-- <a class="btn btn-primary btn-sm float-right" 
@@ -17,6 +19,9 @@
                 <th>Dirección</th>
                 <th>Credito</th>
                 <th>Acciones</th>
+
+                   <td>Editar Eliminar</td>
+
             </tr>
         </thead>
         

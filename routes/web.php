@@ -18,6 +18,13 @@ Route::get('Productos', 'ProductosController@index')->name('productos.index');
 Route::get('Catalogos,{catalogo}', 'ProductosController@index2')->name('catalogo.index');
 
 Route::get('clientes', 'ClientesController@index')->name('clientes.index');
+Route::get('clientes/crear', 'ClientesController@create') 
+       ->name('crear-cliente');
+
+
+       Route::post('clientes', 'ClientessController@store')
+       ->name('guardar-cliente');
+
 Route::get('proveedores', 'ProveedoresController@index')->name('proveedores.index');
 Route::get('presentacionesproductos', 'PresentacionesProductosController@index')->name('presentacionesproductos.index');
 

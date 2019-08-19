@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Clientes;
 class ClientesController extends Controller
@@ -13,9 +14,8 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        return view('Clientes.index',[
-            'clientes' => Clientes::get(),
-        ]);
+        $clientes = Clientes::all();
+        return view('clientes.index', compact('clientes'));
     }
 
     /**
@@ -25,7 +25,8 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        //
+        return view('clientes.crear');
+
     }
 
     /**
@@ -36,7 +37,9 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Clientes::create($request->all());
+
+ 
     }
 
     /**
@@ -60,8 +63,11 @@ class ClientesController extends Controller
      */
     public function edit($id)
     {
-        //
+            $mensaje = DB::table('clientes')->where('id_cliente', $id)->first();
+            return view('clientes.editar', compact('cliente'));
     }
+     
+
 
     /**
      * Update the specified resource in storage.
@@ -72,7 +78,15 @@ class ClientesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('clientes')->where('id_cliente', $id)->update([
+            'nombre' => $request->input('nombre'),
+            'telefonos' => $request->input('telefonos'),
+            'direccion' => $request->input('direccion'),
+            'con_credito' => $request->input('con_credito'),
+            'updated_at' => Carbon::now()
+        ]);
+        return redirect()->route('ver-clientes');
+ 
     }
 
     /**

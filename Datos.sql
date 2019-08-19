@@ -673,55 +673,55 @@ INSERT INTO productos(nombre,imagen, precio, cantidad_disponible, cantidad_minim
 	
 -------------------------------------	
 
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('001','Jorge Pérez','8530001','Cra.3#10-34','Administrador','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 	
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('002','Valeria Mejia Zapata','8536345','Cra.5#19-37','Vendedor','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 	
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('003','Juan Bermudez Duque','8531235','Cra.1#11-23','Vendedor','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('004','Carlos Franco','3237059840','Calle 15 #30-17','Administrador','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('005','Edgar Velez','3157059840','Calle 25 #32-17','Vendedor','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('006','Cristian Aristi','3183059840','Calle 95 #90-17','Vendedor','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('007','Jose Londoño','3111059840','Calle 65 #10-27','Vendedor','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('008','Juan Duran','3104059840','Calle 65 #50-57','Vendedor','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('009','Maria Gomez','3110059840','Calle 65 #30-10','Vendedor','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('010','Liliana Franco','3112059840','Calle 65 #30-40','Administrador','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('011','Ana Solarte','3135459840','Calle 65 #12-11','Vendedor','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('012','Josefa Franco','3106059840','Calle 65 #20-17','Vendedor','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 
-INSERT INTO personal(id_persona, nombre, telefono, direccion, perfil, contrasena)
+INSERT INTO personal(id, nombre, telefono, direccion, perfil, password)
 	VALUES('013','Jenny Franco','3114059840','Calle 65 #10-17','Administrador','$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y')
 	ON CONFLICT DO NOTHING;
 

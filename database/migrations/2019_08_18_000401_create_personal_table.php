@@ -14,14 +14,15 @@ class CreatePersonalTable extends Migration
     public function up()
     {
         Schema::create('personal', function (Blueprint $table) {
-            $table->string('id_persona');
+            $table->string('id');
             $table->string('nombre');
             $table->string('telefono');
             $table->string('direccion');
             $table->string('perfil');
-            $table->string('contrasena');
+            $table->string('password');
+            $table->rememberToken();
 
-            $table->primary('id_persona');
+            $table->primary('id');
            
 
             $table->timestamps();

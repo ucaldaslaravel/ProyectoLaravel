@@ -20,7 +20,7 @@ class CreateVentasTable extends Migration
             $table->integer('total_contado')->default(0);
             $table->string('id_cliente');
             $table->string('id_vendedor');
-            $table->foreign('id_vendedor')->references('id_persona')->on('personal')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_vendedor')->references('id')->on('personal')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_cliente')->references('id_cliente')->on('clientes')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();

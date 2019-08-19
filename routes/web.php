@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('Productos', 'ProductosController@index')->name('productos.index');
 Route::get('Catalogos,{catalogo}', 'ProductosController@index2')->name('catalogo.index');
 
@@ -29,3 +30,9 @@ Route::get('proveedores', 'ProveedoresController@index')->name('proveedores.inde
 Route::get('presentacionesproductos', 'PresentacionesProductosController@index')->name('presentacionesproductos.index');
 
 
+Route::post('login', 'Auth\LoginController@login');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');

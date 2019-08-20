@@ -11,9 +11,11 @@
 |
 */
 
+//Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('Productos', 'ProductosController@index')->name('productos.index');
 Route::get('Catalogos,{catalogo}', 'ProductosController@index2')->name('catalogo.index');
@@ -39,7 +41,8 @@ Route::delete('clientes/{id}', 'ClientesController@destroy')
 Route::get('proveedores', 'ProveedoresController@index')->name('proveedores.index');
 Route::get('presentacionesproductos', 'PresentacionesProductosController@index')->name('presentacionesproductos.index');
 
-
+//Login
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -47,4 +50,4 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::resource('personal','PersonalController');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+

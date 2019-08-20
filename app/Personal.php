@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Personal extends Authenticatable
 {
 
-    protected $primeryKey = 'id_persona';
+    protected $primaryKey = 'id';
 
     protected $table = 'personal';
 
@@ -19,7 +19,7 @@ class Personal extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id_persona', 'nombre', 'telefono', 'direccion', 'perfil', 'password',
+        'nombre', 'telefono', 'direccion', 'perfil', 'password',
     ];    
 
     public function setPasswordAttribute($password)

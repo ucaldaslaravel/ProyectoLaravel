@@ -16,7 +16,7 @@ class ProductosController extends Controller
     {
    
 
-        return view('Productos.index',[
+        return view('productos.index',[
             'productos' => Productos::get(),
         ]);
     }
@@ -25,7 +25,7 @@ class ProductosController extends Controller
     {
    
 
-        return view('Productos.index',[
+        return view('productos.index',[
             'productos' => Productos::where('id_categoria_producto', $producto),
         ]);
     }
@@ -37,7 +37,7 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        return view('Productos.crear');
+        return view('productos.crear');
 
     }
 
@@ -51,7 +51,7 @@ class ProductosController extends Controller
     {
         Producto::create(request()->all());
 
-        return redirect()->route('Productos.index');
+        return redirect()->route('productos.index');
             }
 
     /**
@@ -61,7 +61,7 @@ class ProductosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Producto $producto) {
-        return view('Productos.show', [
+        return view('productos.show', [
             'producto' => $producto
         ]);
     }

@@ -7,6 +7,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Personal extends Authenticatable
 {
+
+    protected $primeryKey = 'id_persona';
+
+    protected $table = 'personal';
+
     use Notifiable;
     /**
      * The attributes that are mass assignable.
@@ -15,8 +20,7 @@ class Personal extends Authenticatable
      */
     protected $fillable = [
         'id_persona', 'nombre', 'telefono', 'direccion', 'perfil', 'password',
-    ];
-    protected $table = 'personal';
+    ];    
 
     public function setPasswordAttribute($password)
     {

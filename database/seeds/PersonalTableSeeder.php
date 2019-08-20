@@ -20,7 +20,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '8530001',
             'direccion' => 'Cra.3#10-34',
             'perfil' => 'Administrador',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -31,7 +31,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '8536345',
             'direccion' => 'Cra.5#19-37',
             'perfil' => 'Vendedor',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -42,7 +42,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '8531235',
             'direccion' => 'Cra.1#11-23',
             'perfil' => 'Vendedor',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -53,7 +53,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '3237059840',
             'direccion' => 'Calle 15 #30-17',
             'perfil' => 'Administrador',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -64,7 +64,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '3157059840',
             'direccion' => 'Calle 25 #32-17',
             'perfil' => 'Vendedor',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -75,7 +75,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '3183059840',
             'direccion' => 'Calle 95 #90-17',
             'perfil' => 'Vendedor',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -86,7 +86,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '3111059840',
             'direccion' => 'Calle 65 #10-27',
             'perfil' => 'Vendedor',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -97,7 +97,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '3104059840',
             'direccion' => 'Calle 65 #50-57',
             'perfil' => 'Vendedor',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -108,7 +108,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '3110059840',
             'direccion' => 'Calle 65 #30-10',
             'perfil' => 'Vendedor',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -119,7 +119,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '3112059840',
             'direccion' => 'Calle 65 #30-40',
             'perfil' => 'Administrador',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -130,7 +130,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '3135459840',
             'direccion' => 'Calle 65 #12-11',
             'perfil' => 'Vendedor',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -141,7 +141,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '3106059840',
             'direccion' => 'Calle 65 #20-17',
             'perfil' => 'Vendedor',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
 
 
@@ -152,7 +152,7 @@ class PersonalTableSeeder extends Seeder
             'telefono' => '3114059840',
             'direccion' => 'Calle 65 #10-17',
             'perfil' => 'Administrador',
-            'password' => '$2y$10$H.j77qRgZ6gm7ua7vOciLOSr3JQiG3g7fa3RLxPcYv2HNObCn673y'
+            'password' => 123
         ]);
     }
 }

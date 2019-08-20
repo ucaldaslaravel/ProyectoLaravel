@@ -3,7 +3,7 @@
 @section('titulo', 'Clientes')
 
 @section('contenido')
-    <h1>Cliente</h1>
+    <h1>Editar Cliente</h1>
 
     <form method="post" action="{{ route('crear-cliente') }}">
         @csrf
@@ -18,13 +18,14 @@
         <input name="direccion" placeholder="Direccion..." 
                value="{{ $cliente->direccion }}"><br>
         {!! $errors->first('direccion', '<small>:message</small>') !!} <br>
-        
-        Crédito&nbsp;&nbsp;&nbsp;No
+        <label>
+        Crédito&nbsp;&nbsp;&nbsp;Si
         <input name="con_credito" input  type="checkbox"
                value="{{ $cliente->con_credito }}"><br>
-        <span class="lever"></span> Si
+        <span class="lever"></span> 
+        </label>
        
-        <button>Enviar</button>
+        <button class="btn btn-success">pepe</button>
     </form> 
 
 @endsection

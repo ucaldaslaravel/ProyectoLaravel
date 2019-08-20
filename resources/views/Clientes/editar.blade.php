@@ -5,23 +5,23 @@
 @section('contenido')
     <h1>Cliente</h1>
 
-    <form method="post" action="{{ route('actualizar-clientes') }}">
+     <form  method="PUT"  action="{{ route('actualizar-cliente', $cliente->id_cliente) }}">
         @csrf
         <input name="nombre" placeholder="Nombre..." 
                value="{{ $cliente->nombre }}"><br>
         {!! $errors->first('nombre', '<small>:message</small>') !!} <br>
         
         <input name="telefonos" placeholder="Telefono..."   
-               value="{{ $cliente->email }}"><br>
+               value="{{ $cliente->telefonos }}"><br>
         {!! $errors->first('telefonos', '<small>:message</small>') !!} <br>
         
         <input name="direccion" placeholder="Direccion..." 
-               value="{{ $cliente->asunto }}"><br>
+               value="{{ $cliente->direccion }}"><br>
         {!! $errors->first('direccion', '<small>:message</small>') !!} <br>
         
         Crédito&nbsp;&nbsp;&nbsp;No
-        <input name="credito" input  type="checkbox"
-               value="{{ $cliente->asunto }}"><br>
+        <input name="con_credito" input  type="checkbox"
+               value="{{ $cliente->con_credito }}"><br>
         <span class="lever"></span> Si
        
         <button>Enviar</button>

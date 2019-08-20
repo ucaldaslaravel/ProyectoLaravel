@@ -35,13 +35,18 @@ class ClientesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        Clientes::create($request->all());
-
- 
+    public function store(Request $request) {
+        // Guardar el mensaje
+        DB::table('clientes')->insert([
+            'nombre' => $request->input('nombre'),
+            'telefonos' => $request->input('telefonos'),
+            'direccion' => $request->input('direccion'),
+            'con_credito' => $request->input('con_credito')
+            
+        ]);
+        // redireccionar. Más adelante se le pedirá que cambie esto
+        return redirect()->route('clientes.index');
     }
-
     /**
      * Display the specified resource.
      *
@@ -50,21 +55,22 @@ class ClientesController extends Controller
      */
     public function show(cliente $cliente)
     {
-        return view('Clientes.show', [
-            'cliente' => $cliente
-        ]);
-    }
+        $mensaje = DB::table('clientes')->where('id_cliente',
+        $id_cliente)->first();
+        return view('clientes.index', compact('cliente'));
 
+
+    }
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-            $mensaje = DB::table('clientes')->where('id_cliente', $id)->first();
-            return view('clientes.editar', compact('cliente'));
+    public function edit($id_cliente)
+    {   $cliente = DB::table('clientes')->where('id_cliente', $id_cliente)->first();
+        return view('clientes.editar', compact('cliente'));
+ 
     }
      
 
@@ -76,7 +82,7 @@ class ClientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_cliente)
     {
         DB::table('clientes')->where('id_cliente', $id)->update([
             'nombre' => $request->input('nombre'),
@@ -85,7 +91,8 @@ class ClientesController extends Controller
             'con_credito' => $request->input('con_credito'),
             'updated_at' => Carbon::now()
         ]);
-        return redirect()->route('ver-clientes');
+        return redirect()->route('clientes.index');
+ 
  
     }
 
@@ -95,8 +102,11 @@ class ClientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_cliente)
     {
-        //
+        DB::table('clientes')->where('id_cliente', $id_cliente)->delete();
+       return redirect()->route('clientes.index');
+
+    
     }
 }

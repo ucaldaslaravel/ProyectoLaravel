@@ -10,7 +10,5 @@ class Clientes extends Model
         'nombre', 'telefonos', 'direccion','con_credito'
    ];
 
-   public function getRouteKeyName() {
-    return 'url';
-}
+  
 }

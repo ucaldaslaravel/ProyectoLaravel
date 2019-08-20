@@ -20,8 +20,6 @@
                 <th>Credito</th>
                 <th>Acciones</th>
 
-                   <td>Editar Eliminar</td>
-
             </tr>
         </thead>
         
@@ -35,7 +33,19 @@
                 
                     <td>{{ $cliente->direccion}}</td>
                     <td>{{ $cliente->con_credito}}</td>
-                    <td> 
+                    <td>
+                        <a href="{{ route('editar-cliente', $cliente->id_cliente) }}">
+                            Editar</a>
+       
+                         <form style="display:inline" 
+                               method="POST" 
+                               action="{{ route('eliminar-cliente',
+                                          $cliente->id_cliente) }}">
+                             @csrf
+                             {!! method_field('DELETE') !!}
+                             <button type="submit">Eliminar</button>
+                         </form>
+       
                        {{-- --{} <div class="btn-group" role="group">
                             <div class="col-md-6 custom">
                                 <a class="btn btn-info btn-sm" href="{{ route('clientes.edit', $cliente->id_cliente) }}">Editar</a>    

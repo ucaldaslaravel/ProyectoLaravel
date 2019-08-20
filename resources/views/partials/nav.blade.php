@@ -16,7 +16,7 @@
 
       
       <a class="dropdown-item btn btn-primary"  href="{{ route('proveedores.index') }}">Proveedores</a>
-      <a class="dropdown-item btn btn-primary"  >Personal</a>
+    <a class="dropdown-item btn btn-primary"  href="{{route('personal.index')}}">Personal</a>
       <a class="dropdown-item btn btn-primary"  >Catalogo Producto</a>
       <a class="dropdown-item btn btn-primary" href="{{ route('presentacionesproductos.index') }}" >Presentaciones Producto</a>
       <a class="dropdown-item btn btn-primary"  href="{{ route('productos.index') }}" >Productos</a>

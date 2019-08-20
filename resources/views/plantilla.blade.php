@@ -21,8 +21,10 @@
      @include('partials/nav')
      
      <br>
-
-     @yield('contenido')
+   <div class="container">
+      @yield('contenido')
+   </div>
+     
 
   
 

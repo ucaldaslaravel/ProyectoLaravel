@@ -6,12 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 class Productos extends Model
 {
 
-    protected $fillable = ['nombre', 'precio', 'iva',
-    'cantidad_disponible',          
-    'cantidad_minima', 'cantidad_maxima', 'url'
-   ];
+    protected $primaryKey = 'id_producto';
 
-    public function getRouteKeyName() {
-        return 'url';
-    }
+    protected $fillable = ['nombre', 'precio', 'iva', 'cantidad_disponible','cantidad_minima', 
+                    'cantidad_maxima',
+   ];
 }

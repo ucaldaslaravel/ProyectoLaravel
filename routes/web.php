@@ -43,6 +43,8 @@ Route::get('presentacionesproductos', 'PresentacionesProductosController@index')
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
+//Ruta CRUD para Personal
+Route::resource('personal','PersonalController');
 
 
 Route::get('/home', 'HomeController@index')->name('home');

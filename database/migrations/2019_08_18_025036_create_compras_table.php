@@ -19,7 +19,7 @@ class CreateComprasTable extends Migration
             $table->date('fecha_recibido');
             $table->integer('total_credito')->default(0);
             $table->integer('total_contado')->default(0);
-            $table->string('id_proveedor');
+            $table->bigInteger('id_proveedor');
             $table->foreign('id_proveedor')->references('id_proveedor')->on('proveedores')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();

@@ -15,7 +15,7 @@ class CreatePagosClientesTable extends Migration
     {
         Schema::create('pagos_clientes', function (Blueprint $table) {
             $table->bigIncrements('id_pago_cliente');
-            $table->string('id_cliente');
+            $table->bigInteger('id_cliente');
             $table->integer('valor_pago');
             $table->date('fecha_pago');
             $table->foreign('id_cliente')->references('id_cliente')->on('clientes')->onDelete('cascade')->onUpdate('cascade');

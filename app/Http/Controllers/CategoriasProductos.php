@@ -1,16 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Personal;
 
 use Illuminate\Http\Request;
 
-class PersonalController extends Controller
+class CategoriasProductos extends Controller
 {
-    function __construct() {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +13,7 @@ class PersonalController extends Controller
      */
     public function index()
     {
-        $personal = Personal::all();
-        return view('personal.index',compact('personal'));
+        //
     }
 
     /**

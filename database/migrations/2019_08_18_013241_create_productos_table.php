@@ -16,14 +16,13 @@ class CreateProductosTable extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->bigIncrements('id_producto');
             $table->string('nombre');
-            $table->string('imagen');
             $table->decimal('precio')->default(0);
             $table->decimal('iva')->default(0.0);
             $table->integer('cantidad_disponible')->default(0);
             $table->integer('cantidad_minima')->default(1);
             $table->integer('cantidad_maxima')->default(1);
-            $table->integer('id_presentacion_producto');
-            $table->integer('id_categoria_producto');
+            $table->bigInteger('id_presentacion_producto');
+            $table->bigInteger('id_categoria_producto');
            
             $table->foreign('id_presentacion_producto')->references('id_presentacion_producto')->on('presentaciones_productos')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_categoria_producto')->references('id_categoria_producto')->on('categorias_productos')->onDelete('cascade')->onUpdate('cascade');

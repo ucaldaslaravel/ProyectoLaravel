@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Proveedores extends Model
 {
+    protected $primaryKey = 'id_proveedor';
 
     protected $fillable = [
         'nombre', 'telefono', 'correo'

@@ -19,7 +19,7 @@ class CreateBajasProductosTable extends Migration
             $table->date('fecha');
             $table->decimal('cantidad')->default(0);
             $table->integer('precio')->default(0);
-            $table->integer('id_producto');
+            $table->bigInteger('id_producto');
            
             $table->foreign('id_producto')->references('id_producto')->on('productos')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

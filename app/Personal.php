@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Personal extends Authenticatable
@@ -15,20 +14,12 @@ class Personal extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id_persona', 'nombre', 'telefono','direccion','perfil','contrasena',
+        'id_persona', 'nombre', 'telefono', 'direccion', 'perfil', 'password',
     ];
     protected $table = 'personal';
 
-    public function setPasswordAttribute($password) {
-        $this->attributes['contrasena'] = bcrypt($password);
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
     }
-   
- 
-
-    /**
-     * Se retornará un objeto con los atributos necesarios para
-     * procesar los mensajes relacionados con un usuario
-     */
-   
-  
 }

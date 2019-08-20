@@ -1,5 +1,6 @@
+
 <div  class="navbar navbar-light" >
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Menu
     </button>
     <div class="dropdown-menu" class="collapse" class="nav" aria-labelledby="dropdownMenu2">

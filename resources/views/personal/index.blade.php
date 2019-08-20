@@ -6,7 +6,18 @@
 @section('contenido')
 <div class="mt-5 text-center">
         <h1>Personal</h1>
-    </div>
+</div>
+
+@if (session()->has('info'))
+    <div class="alert alert-success">{{ session('info') }}</div>
+@endif
+
+<div>
+    <a class="btn btn-success btn-sm float-right" href="{{ route('personal.create') }}">
+        Crear nuevo usuario del personal
+    </a>
+</div>
+
     
     <table class="table table-hover">
         <thead>

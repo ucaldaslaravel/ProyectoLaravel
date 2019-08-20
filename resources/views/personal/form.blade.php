@@ -28,23 +28,23 @@
     </div>
     
     <div class="form-group">
-            <label for="confirmacion_password">Confirme la contraseña</label>
-            <input type="password" class="form-control" id="confirmacion_password" name="confirmacion_password" placeholder="Reingrese la contraseña" value="{{ $personal->password }}">
-            {!! $errors->first('confirmacion_password', '<span class=error>:message</span>') !!}
+            <label for="password_confirmation">Confirme la contraseña</label>
+            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Reingrese la contraseña" value="{{ $personal->password }}">
+            {!! $errors->first('password_confirmation', '<span class=error>:message</span>') !!}
     </div>
 @endunless
 
 <div class="checkbox">
     Privilegios:
-    @foreach ($roles as $id => $name)
+    @foreach ($roles as $rol)
         <label>
             &nbsp;&nbsp;
-            <input type="checkbox" name="roles[]" value="{{ $id }}" 
-                {{ $user->roles->pluck('id')->contains($id) ? 'checked' : '' }}
+            <input type="radio" name="perfil" value="{{ $rol }}" 
+                {{ $personal->perfil == $rol ? 'checked':''}}
             >
-            {{ $name }}
+            {{ $rol }}
         </label>
     @endforeach
 </div>
-{!! $errors->first('roles', '<span class=error>:message</span>') !!}
+
 <hr>

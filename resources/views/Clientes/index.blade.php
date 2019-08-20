@@ -34,7 +34,7 @@
                     <td>{{ $cliente->direccion}}</td>
                     <td>{{ $cliente->con_credito}}</td>
                     <td>
-                        <a href="{{ route('editar-cliente', $cliente->id_cliente) }}">
+                        <a href="{{ route('editar-cliente', $cliente->id_cliente) }}" class="btn btn-success">
                             Editar</a>
        
                          <form style="display:inline" 
@@ -43,7 +43,7 @@
                                           $cliente->id_cliente) }}">
                              @csrf
                              {!! method_field('DELETE') !!}
-                             <button type="submit">Eliminar</button>
+                             <button type="submit" class="btn btn-danger">Eliminar</button>
                          </form>
        
                        {{-- --{} <div class="btn-group" role="group">

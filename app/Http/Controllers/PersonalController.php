@@ -21,7 +21,7 @@ class PersonalController extends Controller
      */
     public function index()
     {
-        $personal = Personal::all();
+        $personal = Personal::paginate(6);
         return view('personal.index',compact('personal'));
     }
 
@@ -58,7 +58,8 @@ class PersonalController extends Controller
      */
     public function show($id)
     {
-        //
+        $personal = Personal::findOrFail($id);
+        return view('personal.show', compact('personal'));
     }
 
     /**
@@ -70,7 +71,6 @@ class PersonalController extends Controller
     public function edit($id)
     {
         $personal = Personal::findOrFail($id);
-        //$this->authorize($persona);
         $roles = ['Administrador','Vendedor'];
         return view('personal.edit', compact('personal','roles'));
     }
@@ -85,7 +85,6 @@ class PersonalController extends Controller
     public function update(ActualizarPersonalRequest $request, $id)
     {
         $personal = Personal::findOrFail($id);
-        //$this->authorize($personal);
         $personal->update($request->all());
         //$personal->roles()->sync($request->roles);
         return back()->with('info', 'Usuario del personal actualizado');

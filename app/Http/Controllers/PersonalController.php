@@ -21,7 +21,7 @@ class PersonalController extends Controller
      */
     public function index()
     {
-        $personal = Personal::all();
+        $personal = Personal::paginate(6);
         return view('personal.index',compact('personal'));
     }
 

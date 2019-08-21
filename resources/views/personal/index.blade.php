@@ -34,22 +34,22 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($personal as $personal)
+            @foreach ($personal as $persona)
             <tr>
-                <td>{{$personal->id}}</td>
+                <td>{{$persona->id}}</td>
                 <td> 
-                    <a href="{{route('personal.show',$personal->id)}}">{{ $personal->nombre}} </a> 
+                    <a href="{{route('personal.show',$persona->id)}}">{{ $persona->nombre}} </a>
                 </td>
-                <td>{{ $personal->telefono}}</td>
-                <td>{{ $personal->direccion}}</td>
-                <td>{{ $personal->perfil}}</td>
-                <td>{{ $personal->created_at}}</td>
-                <td>{{ $personal->updated_at}}</td>
+                <td>{{ $persona->telefono}}</td>
+                <td>{{ $persona->direccion}}</td>
+                <td>{{ $persona->perfil}}</td>
+                <td>{{ $persona->created_at}}</td>
+                <td>{{ $persona->updated_at}}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{route('personal.edit',$personal->id)}}">Editar</a>
+                    <a class="btn btn-primary" href="{{route('personal.edit',$persona->id)}}">Editar</a>
                 </td>
                 <td>
-                <form method="POST" action="{{route('personal.destroy',$personal->id)}}" style="display:inline">
+                <form method="POST" action="{{route('personal.destroy',$persona->id)}}" style="display:inline">
                     @csrf
                     {!! method_field('DELETE') !!}
                     <button class="btn btn-danger" type="submit">Eliminar</button>    
@@ -60,4 +60,5 @@
             @endforeach
         </tbody>
     </table>
+    {{ $personal->links() }}
 @endsection

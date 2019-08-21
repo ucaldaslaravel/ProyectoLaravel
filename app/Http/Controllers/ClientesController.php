@@ -5,8 +5,14 @@ use DB;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Clientes;
+use App\Http\Requests\CrearClienteRequest;
+
 class ClientesController extends Controller
 {
+
+    function __construct() {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        $clientes = Clientes::all();
+        $clientes = Clientes::paginate(6);
         return view('clientes.index', compact('clientes'));
     }
 
@@ -25,8 +31,7 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        return view('clientes.crear');
-
+        return view('clientes.create');
     }
 
     /**
@@ -36,16 +41,9 @@ class ClientesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        // Guardar el mensaje
-        DB::table('clientes')->insert([
-            'nombre' => $request->input('nombre'),
-            'telefonos' => $request->input('telefonos'),
-            'direccion' => $request->input('direccion'),
-            'con_credito' => $request->input('con_credito')
-            
-        ]);
-        // redireccionar. Más adelante se le pedirá que cambie esto
-        return redirect()->route('clientes.index');
+        //print_r($request->all());
+        Clientes::create($request->all());
+        return redirect()->route('clientes.index')->with('info','Usuario creado');
     }
     /**
      * Display the specified resource.
@@ -53,12 +51,13 @@ class ClientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(cliente $cliente)
+    public function show($id_cliente)
     {
-        $mensaje = DB::table('clientes')->where('id_cliente',
+        /*$mensaje = DB::table('clientes')->where('id_cliente',
         $id_cliente)->first();
-        return view('clientes.index', compact('cliente'));
-
+        return view('clientes.index', compact('cliente'));*/
+        $cliente = Clientes::findOrFail($id_cliente);
+        return view('clientes.show', compact('cliente'));
 
     }
     /**
@@ -68,9 +67,11 @@ class ClientesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id_cliente)
-    {   $cliente = DB::table('clientes')->where('id_cliente', $id_cliente)->first();
-        return view('clientes.editar', compact('cliente'));
- 
+    {   
+        /*$cliente = DB::table('clientes')->where('id_cliente', $id_cliente)->first();
+        return view('clientes.edit', compact('cliente'));*/
+        $cliente = Clientes::findOrFail($id_cliente);
+        return view('clientes.edit', compact('cliente'));
     }
      
 
@@ -84,15 +85,18 @@ class ClientesController extends Controller
      */
     public function update(Request $request, $id_cliente)
     {
-        DB::table('clientes')->where('id_cliente', $id)->update([
+        /*DB::table('clientes')->where('id_cliente', $id)->update([
             'nombre' => $request->input('nombre'),
             'telefonos' => $request->input('telefonos'),
             'direccion' => $request->input('direccion'),
             'con_credito' => $request->input('con_credito'),
             'updated_at' => Carbon::now()
         ]);
-        return redirect()->route('clientes.index');
- 
+        return redirect()->route('clientes.index');*/
+        $cliente = Clientes::findOrFail($id_cliente);
+        $cliente->update($request->all());
+        //$personal->roles()->sync($request->roles);
+        return back()->with('info', 'Cliente actualizado');
  
     }
 
@@ -104,8 +108,11 @@ class ClientesController extends Controller
      */
     public function destroy($id_cliente)
     {
-        DB::table('clientes')->where('id_cliente', $id_cliente)->delete();
-       return redirect()->route('clientes.index');
+        /*DB::table('clientes')->where('id_cliente', $id_cliente)->delete();
+       return redirect()->route('clientes.index');*/
+        $cliente = Clientes::findOrFail($id_cliente);
+        $cliente->delete();
+        return back()->with('info', 'Cliente eliminado');
 
     
     }

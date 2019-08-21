@@ -23,6 +23,7 @@ Route::resource('clientes','ClientesController');
 
 
 
+Route::resource('categoria','CategoriasProductosController');
 
 Route::resource('proveedores','ProveedoresController');
 Route::resource('presentacionesproductos','PresentacionesProductosController');

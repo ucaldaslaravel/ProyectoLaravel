@@ -8,7 +8,7 @@
       <a class="dropdown-item btn btn-primary" href="{{route('productos.index')}}" >Catalogo Productos</a>
 
       @if (Auth()->check())
-        <a class="dropdown-item btn btn-primary" >Ventas</a>
+        <a class="dropdown-item btn btn-primary" href="{{route('ventas.index')}}">Ventas</a>
         <a class="dropdown-item btn btn-primary"  >Bajas ventas</a>
         <a class="dropdown-item btn btn-primary"  >Detalles ventas</a>
         @if (auth()->user()->perfil=='Administrador')

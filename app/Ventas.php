@@ -15,7 +15,7 @@ class Ventas extends Model
      * @var array
      */
     protected $fillable = [
-        'total_credito', 'total_contado', 'id_cliente', 'id_vendedor',
+        'fecha_venta','total_credito', 'total_contado', 'id_cliente', 'id_vendedor',
     ];
 
     public function vendedor()

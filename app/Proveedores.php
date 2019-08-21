@@ -11,7 +11,5 @@ class Proveedores extends Model
         'nombre', 'telefono', 'correo'
    ];
 
-   public function getRouteKeyName() {
-    return 'url';
-}
+ 
 }

@@ -14,7 +14,6 @@ class Productos extends Model
                     'cantidad_maxima','id_presentacion_producto' ,
                     'id_categoria_producto',
    ];
-<<<<<<< HEAD
    public function getPresentacion(){
     $presentacion = PresentacionesProductos::findOrFail( $this->attributes['id_presentacion_producto']);
     return $presentacion->descripcion;
@@ -27,8 +26,6 @@ class Productos extends Model
 
        
 }
-=======
->>>>>>> 051808cceee87b358d56257bda03f59e08a41a64
 
 
 }

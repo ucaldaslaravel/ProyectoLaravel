@@ -56,5 +56,6 @@
         @endforeach
     </tbody>
 </table>
+{{ $proveedores->links() }}
   
 @endsection

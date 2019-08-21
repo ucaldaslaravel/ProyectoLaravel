@@ -11,11 +11,13 @@ class PresentacionesProductosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct() {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        return view('PresentacionesProductos.index',[
-            'presentacionesproductos' => PresentacionesProductos::get(),
-        ]);
+        $presentacionesproductos = PresentacionesProductos::paginate(6);
+        return view('presentacionesproductos.index', compact('presentacionesproductos'));
     }
 
     /**
@@ -25,7 +27,7 @@ class PresentacionesProductosController extends Controller
      */
     public function create()
     {
-        //
+        return view('presentacionesproductos.create');
     }
 
     /**
@@ -36,7 +38,8 @@ class PresentacionesProductosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        PresentacionesProductos::create($request->all());
+        return redirect()->route('presentacionesproductos.index')->with('info','Presentacion de producto creado');
     }
 
     /**
@@ -45,11 +48,11 @@ class PresentacionesProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(presentacionesproductos $presentacionesproductos)
+    public function show($id_presentacion_producto)
     {
-        return view('PresentacionesProductos.show', [
-            'presentacionesproductos' => $presentacionesproductos
-        ]);
+        $presentacionproducto = PresentacionesProductos::findOrFail($id_presentacion_producto);
+        return view('presentacionesproductos.show', compact('presentacionproducto'));
+
     }
 
     /**
@@ -58,9 +61,10 @@ class PresentacionesProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_presentacion_producto)
     {
-        //
+        $presentacionproducto = PresentacionesProductos::findOrFail($id_presentacion_producto);
+        return view('presentacionesproductos.edit', compact('presentacionproducto'));
     }
 
     /**
@@ -70,9 +74,12 @@ class PresentacionesProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_presentacion_producto)
     {
-        //
+        $presentacionproducto =  PresentacionesProductos::findOrFail($id_presentacion_producto);
+        $presentacionproducto->update($request->all());
+        //$personal->roles()->sync($request->roles);
+        return back()->with('info', 'Presentacion producto actualizado');
     }
 
     /**
@@ -81,8 +88,10 @@ class PresentacionesProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_presentacion_producto)
     {
-        //
+        $cliente =PresentacionesProductos::findOrFail($id_presentacion_producto);
+        $cliente->delete();
+        return back()->with('info', 'Presentacion producto eliminado');
     }
 }

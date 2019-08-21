@@ -9,6 +9,10 @@ use App\CategoriasProductos;
 
 class ProductosController extends Controller
 {
+
+    function __construct() {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +50,7 @@ class ProductosController extends Controller
     {
         Productos::create(request()->all());
 
-        return redirect()->route('productos.index')->with('info','Usuario creado');
+        return redirect()->route('productos.index')->with('info','Producto creado');
             }
 
     /**

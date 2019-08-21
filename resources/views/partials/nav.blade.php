@@ -16,13 +16,15 @@
           <a class="dropdown-item btn btn-primary"  href="{{ route('clientes.index') }}" >Clientes</a>
           <a class="dropdown-item btn btn-primary"  href="{{ route('proveedores.index') }}">Proveedores</a>
           <a class="dropdown-item btn btn-primary"  href="{{route('personal.index')}}">Personal</a>
-          
+          <a class="dropdown-item btn btn-primary" href="{{ route('categoria.index') }}" >Categorias Producto</a>
+
           <a class="dropdown-item btn btn-primary" href="{{ route('presentacionesproductos.index') }}" >Presentaciones Producto</a>
           <a class="dropdown-item btn btn-primary"  href="{{ route('productos.index') }}" >Productos</a>
-          <a class="dropdown-item btn btn-primary" >Pagos clientes</a>
-          <a class="dropdown-item btn btn-primary" >Pagos proveedores</a>
+          
+          <a class="dropdown-item btn btn-primary" href="{{ route('PagoCliente.index')}}" >Pagos clientes</a>
+          <a class="dropdown-item btn btn-primary" href="{{ route('PagoProveedor.index')}}" >Pagos proveedores</a>
           <a class="dropdown-item btn btn-primary"  >Devoluciones ventas</a>
-          <a class="dropdown-item btn btn-primary"  >Compras</a>
+          <a class="dropdown-item btn btn-primary"  href="{{route('compras.index')}}" >Compras</a>
           <a class="dropdown-item btn btn-primary"  >Devoluciones compras</a>
         @endif
       @endif

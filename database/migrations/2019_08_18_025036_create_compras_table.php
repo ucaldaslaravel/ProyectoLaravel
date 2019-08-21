@@ -15,8 +15,8 @@ class CreateComprasTable extends Migration
     {
         Schema::create('compras', function (Blueprint $table) {
             $table->bigIncrements('id_compra');
-            $table->date('fecha_compra');
-            $table->date('fecha_recibido');
+            $table->date('fecha_compra')->default(date('Y-m-d'));;
+            $table->date('fecha_recibido')->default(date('Y-m-d'));
             $table->integer('total_credito')->default(0);
             $table->integer('total_contado')->default(0);
             $table->bigInteger('id_proveedor');

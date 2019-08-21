@@ -34,6 +34,7 @@ Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::resource('ventas','VentasController');
+Route::resource('compras','ComprasController');
 
 //Ruta CRUD para Personal
 Route::resource('personal','PersonalController');

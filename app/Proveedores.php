@@ -10,6 +10,9 @@ class Proveedores extends Model
     protected $fillable = [
         'nombre', 'telefono', 'correo'
    ];
-
+   public function compras()
+   {
+       return $this->hasMany('App\Compras','id_proveedor');
+   }
  
 }

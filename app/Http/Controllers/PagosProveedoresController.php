@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
+use App\PagosProveedores;
 
 class PagosProveedoresController extends Controller
 {
@@ -13,7 +16,8 @@ class PagosProveedoresController extends Controller
      */
     public function index()
     {
-        //
+        $Pagos = PagosProveedores::paginate(7);
+        return view('PagosProveedor.index',compact('Pagos'));
     }
 
     /**
@@ -23,7 +27,7 @@ class PagosProveedoresController extends Controller
      */
     public function create()
     {
-        //
+        return view('PagosProveedor.create');
     }
 
     /**
@@ -34,7 +38,21 @@ class PagosProveedoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $Pago = PagosProveedores::create([
+
+            'id_proveedor' => floatval($request->id_proveedor), 
+            'valor_pago'=> floatval($request->valor_pago),
+            'fecha_pago' => Carbon::now(),
+        ]);
+
+        //print_r($venta->id_venta);
+        //die();
+
+      
+
+        return redirect()->route('PagoProveedor.index')->with('info','Pago creada');
     }
 
     /**
@@ -45,8 +63,9 @@ class PagosProveedoresController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+
+        $Pago = PagosProveedores::findOrFail($id);
+        return view('PagosProveedor.show', compact('Pago'));    }
 
     /**
      * Show the form for editing the specified resource.

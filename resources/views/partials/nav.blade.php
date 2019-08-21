@@ -22,7 +22,7 @@
           <a class="dropdown-item btn btn-primary"  href="{{ route('productos.index') }}" >Productos</a>
           
           <a class="dropdown-item btn btn-primary" href="{{ route('PagoCliente.index')}}" >Pagos clientes</a>
-          <a class="dropdown-item btn btn-primary" >Pagos proveedores</a>
+          <a class="dropdown-item btn btn-primary" href="{{ route('PagoProveedor.index')}}" >Pagos proveedores</a>
           <a class="dropdown-item btn btn-primary"  >Devoluciones ventas</a>
           <a class="dropdown-item btn btn-primary"  href="{{route('compras.index')}}" >Compras</a>
           <a class="dropdown-item btn btn-primary"  >Devoluciones compras</a>

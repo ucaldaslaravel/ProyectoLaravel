@@ -1,11 +1,11 @@
 
 @extends('plantilla')
 
-@section('titulo', 'PagoCliente')
+@section('titulo', 'PagoProveedor')
 
 @section('contenido')
 <div class="mt-5 text-center">
-        <h1>PagosClientes</h1>
+        <h1>PagosProveedores</h1>
 </div>
 
 @if (session()->has('info'))
@@ -13,7 +13,7 @@
 @endif
 
 <div>
-    <a class="btn btn-success btn-sm float-right" href="{{ route('PagoCliente.create') }}">
+    <a class="btn btn-success btn-sm float-right" href="{{ route('PagoProveedor.create') }}">
         Crear nuevo Pago
     </a>
 </div>
@@ -24,7 +24,7 @@
             <tr>       
 
                 <th>Id</th>
-                <th>Cliente</th>
+                <th>Proveedor</th>
                 <th>Valor Pago</th>
                 <th>Fecha Pago</th>
             </tr>
@@ -32,8 +32,8 @@
         <tbody>
             @foreach ($Pagos as $pago)
             <tr>
-                <td> <a href="{{route('PagoCliente.show',$pago->id_pago_cliente)}}"> {{$pago->id_pago_cliente}} </a> </td>
-                <td><a href="{{route('clientes.show',$pago->cliente->id_cliente)}}"> {{ $pago->cliente->nombre }} </a></td>
+                <td> <a href="{{route('PagoProveedor.show',$pago->id_pago_proveedor)}}"> {{$pago->id_pago_proveedor}} </a> </td>
+                <td><a href="{{route('proveedores.show',$pago->proveedor->id_proveedor)}}" >{{ $pago->proveedor->nombre }}</td>
                 <td>{{ $pago->valor_pago}}</td>
                 <td> {{ $pago->fecha_pago}} </a> </td>
    

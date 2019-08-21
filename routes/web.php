@@ -25,7 +25,8 @@ Route::resource('clientes','ClientesController');
 
 
 Route::resource('proveedores','ProveedoresController');
-Route::get('presentacionesproductos', 'PresentacionesProductosController@index')->name('presentacionesproductos.index');
+Route::resource('presentacionesproductos','PresentacionesProductosController');
+
 
 //Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

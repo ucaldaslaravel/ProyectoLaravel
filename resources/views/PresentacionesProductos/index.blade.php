@@ -24,26 +24,25 @@
              <tr>
                     <td>{{ $presentacionproducto->id_presentacion_producto}}</td>
 
-                <td>{{ $presentacionproducto->descripcion}}</td>
+                    <td> <a href="{{route('presentacionesproductos.show',$presentacionproducto->id_presentacion_producto)}}"> {{ $presentacionproducto->descripcion}} </a> </td>
                 
                 <td> 
-                   {{-- --{} <div class="btn-group" role="group">
-                        <div class="col-md-6 custom">
-                            <a class="btn btn-info btn-sm" href="{{ route('clientes.edit', $cliente->id_cliente) }}">Editar</a>    
-                        </div>
-
-                        <div class="col-md-6 custom">
-                            <form method="POST" action="{{ route('clientes.destroy', $cliente->id_cliente) }}">
-                                @csrf
-                                {!! method_field('DELETE') !!}
-                                <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                            </form>
-                        </div>
-                    </div> --}}
+                        <a href="{{ route('presentacionesproductos.edit', $presentacionproducto->id_presentacion_producto) }}" class="btn btn-success">
+                                Editar</a>
+           
+                             <form style="display:inline" 
+                                   method="POST" 
+                                   action="{{ route('presentacionesproductos.destroy',
+                                              $presentacionproducto->id_presentacion_producto) }}">
+                                 @csrf
+                                 {!! method_field('DELETE') !!}
+                                 <button type="submit" class="btn btn-danger">Eliminar</button>
+                             </form>
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
+{{ $presentacionesproductos->links() }}
   
 @endsection

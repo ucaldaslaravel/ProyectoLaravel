@@ -13,5 +13,8 @@ class Clientes extends Model
         'nombre', 'telefonos', 'direccion','con_credito'
    ];
 
-  
+    public function ventas()
+    {
+        return $this->hasMany('App\Ventas','id_cliente');
+    }
 }

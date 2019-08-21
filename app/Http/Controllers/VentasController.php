@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\DetallesVentas;
+use App\Ventas;
 use Illuminate\Http\Request;
 
 class VentasController extends Controller
@@ -13,7 +15,8 @@ class VentasController extends Controller
      */
     public function index()
     {
-        //
+        $ventas = Ventas::paginate(7);
+        return view('ventas.index',compact('ventas'));
     }
 
     /**
@@ -23,7 +26,7 @@ class VentasController extends Controller
      */
     public function create()
     {
-        //
+        return view('ventas.create');
     }
 
     /**
@@ -34,7 +37,31 @@ class VentasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        //die();
+
+        $venta = Ventas::create([
+            'total_credito' => floatval($request->total_credito), 
+            'total_contado'=> floatval($request->total_contado),
+            'id_cliente' => intval($request->id_cliente),
+            'id_vendedor' => intval($request->id_vendedor)
+        ]);
+
+        //print_r($venta->id_venta);
+        //die();
+
+        $detallesventa = DetallesVentas::create([
+            'cantidad' => $request->input('cantidad_producto'), 
+            'valor_producto'=> $request->input('valor_producto'),
+            'descuento'=> $request->input('descuento'),
+            'iva'=> $request->input('iva'),
+            'id_producto' => $request->input('id_producto'),
+            'id_venta' => $venta->id_venta
+        ]);
+
+
+        return redirect()->route('ventas.index')->with('info','Venta creada');
+
     }
 
     /**
@@ -45,7 +72,8 @@ class VentasController extends Controller
      */
     public function show($id)
     {
-        //
+        $venta = Ventas::findOrFail($id);
+        return view('ventas.show', compact('venta'));
     }
 
     /**

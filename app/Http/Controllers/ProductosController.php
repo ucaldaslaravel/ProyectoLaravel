@@ -15,20 +15,13 @@ class ProductosController extends Controller
     public function index()
     {
    
-
-        return view('productos.index',[
-            'productos' => Productos::get(),
-        ]);
+        $productos = Productos::all();
+        return view('productos.index',compact('productos'));
+    
+       
     }
 
-    public function index2(Catalogo $producto)
-    {
-   
-
-        return view('productos.index',[
-            'productos' => Productos::where('id_categoria_producto', $producto),
-        ]);
-    }
+    
 
     /**
      * Show the form for creating a new resource.

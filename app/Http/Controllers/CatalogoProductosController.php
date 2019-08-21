@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Productos;
+use DB;
+
 
 class CatalogoProductosController extends Controller
 {
@@ -13,7 +16,10 @@ class CatalogoProductosController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Productos::all();
+        return view('Catalogo.index',compact('productos'));
+    
+       
     }
 
     /**
@@ -45,7 +51,11 @@ class CatalogoProductosController extends Controller
      */
     public function show($id)
     {
-        //
+        $producto = DB::table('productos')->where('id_producto',
+        $id)->first();
+        return view('Catalogo.show', compact('producto'));
+
+
     }
 
     /**

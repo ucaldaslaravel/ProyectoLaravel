@@ -53,9 +53,6 @@ class ClientesController extends Controller
      */
     public function show($id_cliente)
     {
-        /*$mensaje = DB::table('clientes')->where('id_cliente',
-        $id_cliente)->first();
-        return view('clientes.index', compact('cliente'));*/
         $cliente = Clientes::findOrFail($id_cliente);
         return view('clientes.show', compact('cliente'));
 

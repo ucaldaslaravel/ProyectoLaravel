@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\BajasProductos;
+use App\Productos;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class BajasProductosController extends Controller
@@ -13,7 +16,8 @@ class BajasProductosController extends Controller
      */
     public function index()
     {
-        //
+        $bajas = BajasProductos::paginate(6);
+        return view('bajasproductos.index', compact('bajas'));
     }
 
     /**
@@ -23,7 +27,7 @@ class BajasProductosController extends Controller
      */
     public function create()
     {
-        //
+        return view('bajasproductos.create');
     }
 
     /**
@@ -34,7 +38,13 @@ class BajasProductosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $r = $request->all();
+        $producto = Productos::findOrFail($r['id_producto']);
+        $resultante = $producto->cantidad_disponible - intval($r['cantidad']);
+        $producto->update(['cantidad_disponible' => $resultante >= 0 ? $resultante:0]);
+        $r['fecha'] = Carbon::now();
+        BajasProductos::create($r);
+        return redirect()->route('bajasproductos.index')->with('info','Baja de producto creada');
     }
 
     /**
@@ -45,7 +55,8 @@ class BajasProductosController extends Controller
      */
     public function show($id)
     {
-        //
+        $baja = BajasProductos::findOrFail($id);
+        return view('bajasproductos.show', compact('baja'));
     }
 
     /**
@@ -56,7 +67,8 @@ class BajasProductosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $baja = BajasProductos::findOrFail($id);
+        return view('bajasproductos.edit', compact('baja'));
     }
 
     /**
@@ -68,7 +80,9 @@ class BajasProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $baja = BajasProductos::findOrFail($id);
+        $baja->update($request->all());
+        return back()->with('info', 'Baja de producto actualizada');
     }
 
     /**
@@ -79,6 +93,8 @@ class BajasProductosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $baja = BajasProductos::findOrFail($id);
+        $baja->delete();
+        return back()->with('info', 'Baja de producto eliminada');
     }
 }

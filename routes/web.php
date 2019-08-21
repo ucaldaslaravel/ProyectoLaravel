@@ -38,6 +38,6 @@ Route::resource('ventas','VentasController');
 Route::resource('personal','PersonalController');
 Route::resource('Catalogo','CatalogoProductosController');
 Route::resource('productos','ProductosController');
-
+Route::resource('bajasproductos','BajasProductosController');
 
 

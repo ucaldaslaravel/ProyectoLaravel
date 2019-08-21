@@ -39,7 +39,7 @@ class ProveedoresController extends Controller
     public function store(Request $request)
     {
         //print_r($request->all());
-        Provedoress::create($request->all());
+        Proveedores::create($request->all());
         return redirect()->route('proveedores.index')->with('info','Usuario creado');
     }
 
@@ -77,7 +77,7 @@ class ProveedoresController extends Controller
     public function update(Request $request, $id_proveedor)
     {
         $proveedor = Proveedores::findOrFail($id_proveedor);
-        $proveeedor->update($request->all());
+        $proveedor->update($request->all());
 
         //$personal->roles()->sync($request->roles);
         return back()->with('info', 'Proveedor actualizado');

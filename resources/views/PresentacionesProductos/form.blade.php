@@ -1,8 +1,11 @@
-@extends('plantilla')
+@csrf
 
-@section('titulo', 'Personal')
+<div class="form-group">
+    <label for="nombre">Descripcion</label>
+    <input type="input" class="form-control" id="descripcion" name="descripcion" placeholder="Ingrese una descripcion" value="{{ $presentacionproducto->descripcion?? old('descripcion') }}">
+    {!! $errors->first('descripcion', '<<span class=error>:message</span>') !!}
+</div>
 
-@section('contenido')
 
 
-@endsection
+<hr>

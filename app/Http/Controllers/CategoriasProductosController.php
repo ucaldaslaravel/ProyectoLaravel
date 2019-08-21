@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\CategoriasProductos;
 
-class CategoriasProductos extends Controller
+class CategoriasProductosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class CategoriasProductos extends Controller
      */
     public function index()
     {
-        //
+        $categorias = CategoriasProductos::paginate(6);
+        return view('CategoriasProductos.index', compact('categorias'));
     }
 
     /**
@@ -23,7 +25,7 @@ class CategoriasProductos extends Controller
      */
     public function create()
     {
-        //
+        return view('CategoriasProductos.create');
     }
 
     /**
@@ -34,7 +36,9 @@ class CategoriasProductos extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //print_r($request->all());
+        CategoriasProductos::create($request->all());
+        return redirect()->route('categoria.index')->with('info','Categoria creado');
     }
 
     /**
@@ -45,7 +49,9 @@ class CategoriasProductos extends Controller
      */
     public function show($id)
     {
-        //
+        $categoria = CategoriasProductos::findOrFail($id);
+        return view('CategoriasProductos.show', compact('categoria'));
+
     }
 
     /**
@@ -55,8 +61,8 @@ class CategoriasProductos extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {  $categoria = CategoriasProductos::findOrFail($id);
+        return view('CategoriasProductos.edit', compact('categoria'));
     }
 
     /**
@@ -68,7 +74,11 @@ class CategoriasProductos extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categoria = CategoriasProductos::findOrFail($id);
+        $categoria->update($request->all());
+
+        //$personal->roles()->sync($request->roles);
+        return back()->with('info', 'Categoria actualizado');
     }
 
     /**
@@ -79,6 +89,8 @@ class CategoriasProductos extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categoria = CategoriasProductos::findOrFail($id);
+        $categoria->delete();
+        return back()->with('info', 'Categoria eliminado');
     }
 }

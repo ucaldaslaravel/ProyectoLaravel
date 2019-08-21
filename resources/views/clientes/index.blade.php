@@ -10,6 +10,16 @@
     {{-- <a class="btn btn-primary btn-sm float-right" 
        href="{{ route('clientes.crear') }}"
     >Crear nuevo cliente</a> --}}
+
+    @if (session()->has('info'))
+        <div class="alert alert-success">{{ session('info') }}</div>
+    @endif
+
+    <div>
+        <a class="btn btn-success btn-sm float-right" href="{{ route('clientes.create') }}">
+            Crear nuevo cliente
+        </a>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -28,18 +38,18 @@
                  <tr>
                         <td>{{ $cliente->id_cliente}}</td>
 
-                    <td>{{ $cliente->nombre}}</td>
+                    <td> <a href="{{route('clientes.show',$cliente->id_cliente)}}"> {{ $cliente->nombre}} </a> </td>
                     <td>{{ $cliente->telefonos}}</td>
                 
                     <td>{{ $cliente->direccion}}</td>
                     <td>{{ $cliente->con_credito}}</td>
                     <td>
-                        <a href="{{ route('editar-cliente', $cliente->id_cliente) }}" class="btn btn-success">
+                        <a href="{{ route('clientes.edit', $cliente->id_cliente) }}" class="btn btn-success">
                             Editar</a>
        
                          <form style="display:inline" 
                                method="POST" 
-                               action="{{ route('eliminar-cliente',
+                               action="{{ route('clientes.destroy',
                                           $cliente->id_cliente) }}">
                              @csrf
                              {!! method_field('DELETE') !!}
@@ -62,7 +72,8 @@
                     </td>
                 </tr>
             @endforeach
+            
         </tbody>
     </table>
-
+    {{ $clientes->links() }}
 @endsection

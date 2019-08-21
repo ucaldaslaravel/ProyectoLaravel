@@ -6,7 +6,7 @@
     <div class="dropdown-menu" class="collapse" class="nav" aria-labelledby="dropdownMenu2">
 
       <a class="dropdown-item btn btn-primary" href="/" >Inicio</a>
-      <a class="dropdown-item btn btn-primary" href="{{route('productos.index')}}" >Catalogo Productos</a>
+      <a class="dropdown-item btn btn-primary" href="{{route('Catalogo.index')}}" >Catalogo Productos</a>
 
       @if (Auth()->check())
         <a class="dropdown-item btn btn-primary" >Ventas</a>

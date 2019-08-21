@@ -7,9 +7,15 @@
   
 <br>
 <h3>Productos</h3>
-  {{-- <a class="btn btn-primary btn-sm float-right" 
-     href="{{ route('clientes.crear') }}"
-  >Crear nuevo cliente</a> --}}
+@if (session()->has('info'))
+<div class="alert alert-success">{{ session('info') }}</div>
+@endif
+
+<div>
+<a class="btn btn-success btn-sm float-right" href="{{ route('productos.create') }}">
+    Crear nuevo producto
+</a>
+</div>
   <table class="table">
       <thead>
           <tr>
@@ -19,7 +25,12 @@
               <th>Iva</th>
               <th>Cantidad Disponible</th>
               <th>Cantidad Minima</th>
-              <th>cantidad Maxima</th>
+              <th>Cantidad Maxima</th>
+              <th>Presentacion Producto</th>
+              <th>Categoria Producto</th>
+
+              <th>Acciones</th>
+             
           </tr>
       </thead>
       
@@ -28,7 +39,7 @@
                <tr>
                       <td>{{ $producto->id_producto}}</td>
 
-                  <td>{{ $producto->nombre}}</td>
+                  <td><a href="{{route('productos.show',$producto->id_producto)}}"> {{ $producto->nombre}} </a></td>
                   <td>{{ $producto->precio}}</td>
               
                   <td>{{ $producto->iva}}</td>
@@ -37,37 +48,25 @@
                   <td>{{ $producto->cantidad_disponible}}</td>
                   <td>{{ $producto->cantidad_minima}}</td>
                   <td>{{ $producto->cantidad_maxima}}</td>
-{{-- --{}
+                  <td>{{ $producto->getPresentacion()}}</td>
+                  <td>{{ $producto->getCategoria()}}</td>
                   <td>
-                      <a href="{{ route('editar-cliente', $cliente->id_cliente) }}" class="btn btn-success">
-                          Editar</a>
-     
-                       <form style="display:inline" 
-                             method="POST" 
-                             action="{{ route('eliminar-cliente',
-                                        $cliente->id_cliente) }}">
-                           @csrf
-                           {!! method_field('DELETE') !!}
-                           <button type="submit" class="btn btn-danger">Eliminar</button>
-                       </form>
-     
-                      <div class="btn-group" role="group">
-                          <div class="col-md-6 custom">
-                              <a class="btn btn-info btn-sm" href="{{ route('clientes.edit', $cliente->id_cliente) }}">Editar</a>    
-                          </div>
-
-                          <div class="col-md-6 custom">
-                              <form method="POST" action="{{ route('clientes.destroy', $cliente->id_cliente) }}">
-                                  @csrf
-                                  {!! method_field('DELETE') !!}
-                                  <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                              </form>
-                          </div>
-                      </div> --}}
+                    <a href="{{ route('productos.edit', $producto->id_producto) }}" class="btn btn-success">
+                        Editar</a>
+   
+                     <form style="display:inline" 
+                           method="POST" 
+                           action="{{ route('productos.destroy',
+                                      $producto->id_producto) }}">
+                         @csrf
+                         {!! method_field('DELETE') !!}
+                         <button type="submit" class="btn btn-danger">Eliminar</button>
+                     </form>
                   </td>
               </tr>
           @endforeach
       </tbody>
   </table>
+  {{ $productos->links() }}
 @endsection
 

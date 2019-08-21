@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Productos;
+use App\PresentacionesProductos;
+use App\CategoriasProductos;
 
 class ProductosController extends Controller
 {
@@ -14,8 +16,8 @@ class ProductosController extends Controller
      */
     public function index()
     {
-   
-        $productos = Productos::all();
+
+        $productos = Productos::paginate(6);
         return view('productos.index',compact('productos'));
     
        
@@ -30,7 +32,7 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        return view('productos.crear');
+        return view('productos.create');
 
     }
 
@@ -42,9 +44,9 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
-        Producto::create(request()->all());
+        Productos::create(request()->all());
 
-        return redirect()->route('productos.index');
+        return redirect()->route('productos.index')->with('info','Usuario creado');
             }
 
     /**
@@ -53,10 +55,10 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Producto $producto) {
-        return view('productos.show', [
-            'producto' => $producto
-        ]);
+    public function show( $id_producto) {
+       $producto = Productos::findOrFail($id_producto);
+        return view('productos.show', compact('producto','categoria','presentacion'));
+      
     }
     /**
      * Show the form for editing the specified resource.
@@ -66,8 +68,8 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+        $producto = Productos::findOrFail($id);
+        return view('productos.edit', compact('producto'));    }
 
     /**
      * Update the specified resource in storage.
@@ -78,7 +80,10 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $producto = Productos::findOrFail($id);
+        $producto->update($request->all());
+        return back()->with('info', 'Productos actualizado');
+ 
     }
 
     /**
@@ -89,6 +94,8 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto = Productos::findOrFail($id);
+        $producto->delete();
+        return back()->with('info', 'Productos eliminado');
     }
 }

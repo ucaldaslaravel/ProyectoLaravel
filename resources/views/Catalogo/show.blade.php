@@ -1,19 +1,44 @@
 @extends('plantilla')
 @section('titulo', 'Productos')
 @section('contenido')
-<form action="{{ route('Catalogo.index')}}">
-    <input type="submit" class="btn btn-outline-danger " value="Atras" />
-  </form>
+
+<table class="table ">
   
-    <h1>{{ $producto->nombre }}</h1>
-    <p></p>
-    <img src= "/img_productos/{{ $producto->imagen }}" class="rounded float-left" height="300" alt="...">
+    <tr>
+        <th><img src= "/img_productos/{{ $producto->imagen }}" class="rounded float-left" height="300" alt="...">
+        </th>
+        <td><table class="table ">
+  
+            <tr>
+                <th>Nombre:</th>
+                <td>{{ $producto->nombre }}</td>
+            </tr>
+            <tr>
+                <th>Precio:</th>
+                <td>{{ $producto->precio }}</td>
+            </tr>
+            <tr>
+                <th>Iva:</th>
+                <td>{{ $producto->iva }}</td>
+            </tr>
+            <tr>
+                <th>Categoria:</th>
+                <td>{{ $producto->getCategoria() }}</td>
+            </tr>
+            <tr>
+                <th> Presentacion:</th>
+                <td>{{ $producto->getPresentacion()}}</td>
+            </tr>
+            <tr>
+                <td>
+              <form action="{{ route('Catalogo.index')}}">
+                <input type="submit" class="btn btn-success" value="Atras" />
+              </td>
+              </form></tr>
+          </table></td>
+    
+    
 
-   <p class="text-muted"> Precio </p>
-   <p class="font-weight-bold">  {{ $producto->precio }} </p>
-   <p class="text-muted"> Iva</p>
-   <p class="font-weight-bold">  {{ $producto->iva }} </p>
-   <p class="text-muted"> Cantidad Disponible</p>
-   <p class="font-weight-bold">  {{ $producto->cantidad_disponible }} </p>
-
+  
+    
 @endsection

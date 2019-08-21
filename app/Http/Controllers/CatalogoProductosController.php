@@ -51,8 +51,8 @@ class CatalogoProductosController extends Controller
      */
     public function show($id)
     {
-        $producto = DB::table('productos')->where('id_producto',
-        $id)->first();
+        $producto = Productos::findOrFail($id);
+
         return view('Catalogo.show', compact('producto'));
 
 

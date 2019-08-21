@@ -41,7 +41,7 @@
     </tr>
     <tr>
         <th>Producto:</th>
-        <td> <a href="{{--route('productos.show',$detalle->id_producto)--}}"> {{$detalle->id_producto}}</a> </td>
+        <td> <a href="{{route('productos.show',$detalle->id_producto)}}"> {{$detalle->id_producto}}</a> </td>
     </tr>
     @endforeach
     

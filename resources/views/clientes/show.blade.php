@@ -12,7 +12,7 @@
     </tr>
     <tr>
         <th>Teléfono:</th>
-        <td>{{ $cliente->telefono }}</td>
+        <td>{{ $cliente->telefonos }}</td>
     </tr>
     <tr>
         <th>Dirección:</th>

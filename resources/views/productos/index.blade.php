@@ -12,8 +12,8 @@
 @endif
 
 <div>
-<a class="btn btn-success btn-sm float-right" href="{{ route('clientes.create') }}">
-    Crear nuevo cliente
+<a class="btn btn-success btn-sm float-right" href="{{ route('productos.create') }}">
+    Crear nuevo producto
 </a>
 </div>
   <table class="table">

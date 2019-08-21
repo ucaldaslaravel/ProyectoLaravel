@@ -5,7 +5,7 @@
 @section('contenido')
 
     <br>
-	<h3>Editar Cliente</h3>
+	<h3>Editar Producto</h3>
 	<br>
     
     @if (session()->has('info'))

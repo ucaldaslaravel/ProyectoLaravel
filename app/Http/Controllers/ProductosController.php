@@ -44,7 +44,7 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
-        Producto::create(request()->all());
+        Productos::create(request()->all());
 
         return redirect()->route('productos.index')->with('info','Usuario creado');
             }
@@ -68,7 +68,7 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-        $producto = Productos::findOrFail($id_producto);
+        $producto = Productos::findOrFail($id);
         return view('productos.edit', compact('producto'));    }
 
     /**
@@ -80,7 +80,7 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $producto = Productos::findOrFail($id_producto);
+        $producto = Productos::findOrFail($id);
         $producto->update($request->all());
         return back()->with('info', 'Productos actualizado');
  
@@ -94,7 +94,7 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
-        $producto = Productos::findOrFail($id_producto);
+        $producto = Productos::findOrFail($id);
         $producto->delete();
         return back()->with('info', 'Productos eliminado');
     }

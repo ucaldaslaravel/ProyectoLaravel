@@ -24,6 +24,7 @@ Route::resource('clientes','ClientesController');
 
 
 Route::resource('categoria','CategoriasProductosController');
+Route::resource('PagoCliente','PagosClientesController');
 
 Route::resource('proveedores','ProveedoresController');
 Route::resource('presentacionesproductos','PresentacionesProductosController');

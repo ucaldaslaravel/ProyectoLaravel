@@ -26,4 +26,8 @@ class Personal extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($password);
     }
+
+    public function isAdmin() {
+        return ($this->perfil == 'Administrador');
+    }
 }

@@ -1,5 +1,6 @@
+
 <div  class="navbar navbar-light" >
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Menu
     </button>
     <div class="dropdown-menu" class="collapse" class="nav" aria-labelledby="dropdownMenu2">
@@ -10,7 +11,6 @@
       @if (Auth()->check())
         <a class="dropdown-item btn btn-primary" href="{{route('ventas.index')}}">Ventas</a>
         <a class="dropdown-item btn btn-primary"  >Bajas ventas</a>
-        <a class="dropdown-item btn btn-primary"  >Detalles ventas</a>
         @if (auth()->user()->perfil=='Administrador')
 
           <a class="dropdown-item btn btn-primary"  href="{{ route('clientes.index') }}" >Clientes</a>
@@ -22,11 +22,8 @@
           <a class="dropdown-item btn btn-primary" >Pagos clientes</a>
           <a class="dropdown-item btn btn-primary" >Pagos proveedores</a>
           <a class="dropdown-item btn btn-primary"  >Devoluciones ventas</a>
-          <a class="dropdown-item btn btn-primary"  >Detalles devoluciones ventas</a>
           <a class="dropdown-item btn btn-primary"  >Compras</a>
-          <a class="dropdown-item btn btn-primary"  >Detalles compras</a>
           <a class="dropdown-item btn btn-primary"  >Devoluciones compras</a>
-          <a class="dropdown-item btn btn-primary"  >Detalles devoluciones compras</a>
         @endif
       @endif
     </div>

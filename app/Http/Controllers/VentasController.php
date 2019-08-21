@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use App\DetallesVentas;
 use App\Ventas;
 use Illuminate\Http\Request;
@@ -41,6 +41,8 @@ class VentasController extends Controller
         //die();
 
         $venta = Ventas::create([
+            'fecha_venta' => Carbon::now(),
+
             'total_credito' => floatval($request->total_credito), 
             'total_contado'=> floatval($request->total_contado),
             'id_cliente' => intval($request->id_cliente),
@@ -57,6 +59,8 @@ class VentasController extends Controller
             'iva'=> $request->input('iva'),
             'id_producto' => $request->input('id_producto'),
             'id_venta' => $venta->id_venta
+           
+
         ]);
 
 

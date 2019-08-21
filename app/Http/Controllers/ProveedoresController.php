@@ -13,9 +13,8 @@ class ProveedoresController extends Controller
      */
     public function index()
     {
-        return view('Proveedores.index',[
-            'proveedores' => Proveedores::get(),
-        ]);
+        $proveedores = Proveedores::paginate(6);
+        return view('proveedores.index', compact('proveedores'));
     }
 
     /**
@@ -25,7 +24,7 @@ class ProveedoresController extends Controller
      */
     public function create()
     {
-        //
+        return view('proveedores.create');
     }
 
     /**
@@ -36,7 +35,9 @@ class ProveedoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //print_r($request->all());
+        Provedoress::create($request->all());
+        return redirect()->route('proveedores.index')->with('info','Usuario creado');
     }
 
     /**

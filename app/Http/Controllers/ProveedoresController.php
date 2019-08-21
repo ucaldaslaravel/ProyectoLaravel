@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Proveedores;
 class ProveedoresController extends Controller
-{
+{   
+    function __construct() {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -46,11 +49,11 @@ class ProveedoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_proveedor)
     {
-        return view('Proveedores.show', [
-            'proveedores' => $proveedores
-        ]);
+        $proveedor = Proveedores::findOrFail($id_proveedor);
+        return view('proveedores.show', compact('proveedor'));
+
     }
 
     /**
@@ -59,9 +62,9 @@ class ProveedoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id_proveedor)
+    {  $proveedor = Proveedores::findOrFail($id_proveedor);
+        return view('proveedores.edit', compact('proveedor'));
     }
 
     /**
@@ -71,9 +74,13 @@ class ProveedoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_proveedor)
     {
-        //
+        $proveedor = Proveedores::findOrFail($id_proveedor);
+        $proveeedor->update($request->all());
+
+        //$personal->roles()->sync($request->roles);
+        return back()->with('info', 'Proveedor actualizado');
     }
 
     /**
@@ -82,8 +89,10 @@ class ProveedoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_proveedor)
     {
-        //
+        $proveedor = Proveedores::findOrFail($id_proveedor);
+        $proveedor->delete();
+        return back()->with('info', 'Proveedor eliminado');
     }
 }

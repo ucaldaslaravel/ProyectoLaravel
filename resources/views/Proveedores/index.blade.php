@@ -10,6 +10,15 @@
 {{-- <a class="btn btn-primary btn-sm float-right" 
    href="{{ route('clientes.crear') }}"
 >Crear nuevo cliente</a> --}}
+@if (session()->has('info'))
+<div class="alert alert-success">{{ session('info') }}</div>
+@endif
+
+<div>
+<a class="btn btn-success btn-sm float-right" href="{{ route('proveedores.create') }}">
+    Crear nuevo proveedor
+</a>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -26,23 +35,22 @@
              <tr>
                     <td>{{ $proveedor->id_proveedor}}</td>
 
-                <td>{{ $proveedor->nombre}}</td>
+                <td> <a href="{{route('proveedores.show',$proveedor->id_proveedor)}}"> {{ $proveedor->nombre}} </a> </td>
+                   
                 <td>{{ $proveedor->telefono}}</td>
                 <td>{{ $proveedor->correo}}</td>
-                <td> 
-                   {{-- --{} <div class="btn-group" role="group">
-                        <div class="col-md-6 custom">
-                            <a class="btn btn-info btn-sm" href="{{ route('clientes.edit', $cliente->id_cliente) }}">Editar</a>    
-                        </div>
-
-                        <div class="col-md-6 custom">
-                            <form method="POST" action="{{ route('clientes.destroy', $cliente->id_cliente) }}">
-                                @csrf
-                                {!! method_field('DELETE') !!}
-                                <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                            </form>
-                        </div>
-                    </div> --}}
+                <td>
+                        <a href="{{ route('proveedores.edit', $proveedor->id_proveedor) }}" class="btn btn-success">
+                                Editar</a>
+           
+                             <form style="display:inline" 
+                                   method="POST" 
+                                   action="{{ route('proveedores.destroy',
+                                              $proveedor->id_proveedor) }}">
+                                 @csrf
+                                 {!! method_field('DELETE') !!}
+                                 <button type="submit" class="btn btn-danger">Eliminar</button>
+                             </form>
                 </td>
             </tr>
         @endforeach

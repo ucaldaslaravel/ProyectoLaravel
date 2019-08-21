@@ -24,7 +24,7 @@ Route::resource('clientes','ClientesController');
 
 
 
-Route::get('proveedores', 'ProveedoresController@index')->name('proveedores.index');
+Route::resource('proveedores','ProveedoresController');
 Route::get('presentacionesproductos', 'PresentacionesProductosController@index')->name('presentacionesproductos.index');
 
 //Login
